@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+    
+</head>
+<body>
+    <div>
+        <h1><span>M</span>arket<span>P</span>lace</h1>
+    </div>
+
+    <div id="loginpg">
+
+        <form method="post" action="{% url 'LoginView' %}">
+            {% csrf_token %}
+            {{form.username.label_tag}} {{form.username}}
+            {{form.password.label_tag}} {{form.password}}
+            <label><a href="{% url 'SignUp' %}">create account</a></label><br><br>
+            <button type="submit">Login</button>
+        </form>        
+        
+    </div>
+
+</body>
+</html>
+
+
+
+
+

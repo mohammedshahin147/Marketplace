@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="{% static 'signupstyle.css' %}">
+    
+</head>
+<body>
+    <div>
+        <h1><span>M</span>arket<span>P</span>lace</h1>
+    </div>
+
+    <div id="signuppg">
+
+        <form method="post" action="{% url 'SignUp' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">signup</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
+
+
+

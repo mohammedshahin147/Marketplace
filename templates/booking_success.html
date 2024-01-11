@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        
+
+    </head>
+
+<body>
+
+<div class="container">
+
+    <div class="navbar">
+
+        <a href="{% url 'LogoutView' %}" class="nav-text">LogOut</a>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="display">
+
+        <div class="successmsg">
+
+        
+            <h1 style="color: green;">Booking Success</h1>
+
+
+        </div>
+
+        <br>
+        <br>
+
+        <div class="bodydiv">
+
+            <h2>Your Bookings</h2>
+            <br>
+
+            {% for obj in userobj %}
+
+                <div class="agreementdiv">
+
+                    <h3>Agreement</h3> <br>
+                    <label for="property_name" >Property Name:</label>
+                    {{obj.bookfor.property_name}} <br>
+                    <label for="tenant" >Tenant:</label>
+                    {{obj.tenant}} <br>
+                    <label for="date_from" >Booking From:</label>
+                    {{obj.date_from}} <br>
+                    <label for="date_to" >Booking To:</label>
+                    {{obj.date_to}} <br>
+                    <label for="duration" >Days:</label>
+                    {{obj.duration}} <br>
+                    <label for="total_rate" >Totat Rate:</label>
+                    {{obj.total_rate}} <br>
+
+                <br>
+                <br>
+
+            {% endfor %}
+
+                 
+
+
+
+
+        </div>
+        
+
+
+
+
+    </div>
+
+    
+</div>   
+
+
+
+
+
+</body>
+</html>
+

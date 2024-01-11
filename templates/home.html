@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="{% static 'homestyle.css' %}">
+
+    </head>
+
+<body>
+
+<div class="container">
+
+    <div class="navbar">
+
+        <a href="{% url 'LogoutView' %}" class="nav-text">LogOut</a> <br>
+        <br>
+
+        <form action="{% url 'userapp:SearchView' %}" method="GET">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="display">
+
+        {% if prop %}
+
+            {% for obj in prop %}
+
+                <div class="property_box">
+                
+                    <label for="property_name" >Property Name:</label>
+                    {{obj.property_name}}  <br> 
+                    <label for="rate" >Rate:</label>
+                    {{obj.rate}}  <br>
+                    <label for="address" >Address:</label>
+                    {{obj.address}}  <br>
+                    <label for="rented" >Status:</label>
+                    {{obj.rented}}  <br>
+                    <label for="available_from" >Available From:</label>
+                    {{obj.available_from}}  <br>
+                    <label for="category" >Category:</label>
+                    {{obj.category}}  <br>
+                    <label for="description" >Description:</label>
+                    {{obj.description}} <br>
+                    <br>
+
+                    <a href="{% url 'userapp:BookingView' obj.id %}" style="text-decoration: none;">Book Now</a>
+                
+                <br>
+                <br>
+        
+                </div>
+
+                <br>
+
+            {% endfor %}
+
+        {% else %}
+            <h2>NO Property For Display</h2>
+        {% endif %}
+        
+
+
+    </div>
+
+    
+</div>   
+
+</body>
+</html>

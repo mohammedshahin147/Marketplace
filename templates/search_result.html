@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="display">
+
+        {% if properties %}
+            <h3>Search Results</h3>
+            <ul>
+                {% for property in properties %}
+                    <li>{{ property.name }} - {{ property.location }} - {{ property.rate }} - {{property.category}}</li>
+                    <a href="{% url 'userapp:BookingView' property.id %}" style="text-decoration: none;">Book Now</a>
+                    <br>
+                 {% endfor %}
+            </ul>
+        {% else %}
+            <p>No properties found for the search query.</p>
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

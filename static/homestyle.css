@@ -1,0 +1,48 @@
+body {
+    background-color: hsla(63, 79%, 45%, 0.918);
+    margin: 10px;
+}
+
+.navbar {
+    background-color: #f70606;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.nav-text {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 40px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-text:hover {
+    color: yellow;
+}
+
+.display {
+    display: flex;
+    margin: 0px;
+}
+
+
+.property_box {
+    border: 3px solid #ff0000;
+    border-radius: 8px;
+    margin: 10px;
+    overflow: hidden;
+    max-width: 300px;
+    margin-bottom: auto;
+    background-color: #f7f7f7;
+    padding: 10px;
+}
+
+
+#book-btn {
+    background-color: blue;
+    height: 10px;
+    padding: 2px;
+}
+   
